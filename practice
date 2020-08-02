@@ -1,0 +1,95 @@
+import java.util.*;
+import java.io.*;
+public class Lib
+{
+	public static void main(String arg[])throws IOException
+	{
+		boolean k,g;
+		String s,s1,s2,s3,s4,s8;
+		Scanner in = new Scanner(System.in);
+		System.out.println("enter user roll no : ");
+		s=in.nextLine();
+		File f3=new File(s);
+		Lib ob = new Lib();
+		
+		if((k=f3.exists())==false)
+		{
+				System.out.println("set the password : ");
+				String s5=in.nextLine();
+				File f6 = new File(s5);
+				f6.createNewFile();
+				System.out.println("enter the book name : ");
+				s3=in.nextLine();
+				System.out.println("enter the issuing date : ");
+				s2=in.nextLine();
+				System.out.println("enter the due date : ");
+				s1=in.nextLine();
+				FileWriter f1 = new FileWriter(s,true);
+				BufferedWriter bf = new BufferedWriter(f1);
+				int i;
+					bf.write(s);
+					bf.newLine();
+					bf.write(s2);
+					bf.newLine();
+					bf.write(s1);
+					bf.newLine();
+					bf.write(s3);
+					bf.newLine();
+				bf.close();
+				System.out.println();
+				String d;
+				FileReader f2=new FileReader(s);
+				BufferedReader bf1 = new BufferedReader(f2);
+				while((d=bf1.readLine())!=null	)
+				{
+					System.out.println(d);
+				}
+				bf1.close();
+		}
+		else
+		{
+			String s7;
+			System.out.println("alresy exists");
+			System.out.println("enter the password : ");
+			s7=in.nextLine();
+			File f7 = new File(s7);
+			if((g=f7.exists())==true)
+			{
+			
+				FileWriter f4 = new FileWriter(s);
+				BufferedWriter bf4 = new BufferedWriter(f4);
+			
+				System.out.println("enter the book name : ");
+				s3=in.nextLine();
+				System.out.println("enter the issuing date : ");
+				s2=in.nextLine();
+				System.out.println("enter the due date : ");
+				s1=in.nextLine();
+				
+				bf4.write(s);
+				bf4.newLine();
+				bf4.write(s3);
+				bf4.newLine();
+				bf4.write(s2);
+				bf4.newLine();
+				bf4.write(s1);
+				bf4.newLine();
+				bf4.close();
+
+				System.out.println();
+				String d1;
+				FileReader f5=new FileReader(s);
+				BufferedReader bf5 = new BufferedReader(f5);
+				while((d1=bf5.readLine())!=null	)
+				{
+					System.out.println(d1);
+				}
+				bf5.close();
+			}
+			else
+			{
+				System.out.println("enter the coorect password");
+			}
+		}		
+	}
+}
