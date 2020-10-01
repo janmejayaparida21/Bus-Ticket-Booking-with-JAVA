@@ -59,10 +59,10 @@ public class editing
 				}
 				for(int i=0;i<tk;i++)
 				{	
-					if(f1.exists()==false)
+					if((f1.exists())==false)
 					{
 						f1.createNewFile();
-						System.out.println("set password : ");
+						System.out.println("Set Password : ");
 						String Password=s2.nextLine();
 						
 						FileWriter fp = new FileWriter(pass);
@@ -119,7 +119,7 @@ public class editing
 						System.out.println("ENter the Phone Number: ");
 						int PHNumber = 0;
 						
-						while(PHNumber<1000000||PHNumber>9999999)
+						while(PHNumber<1000000000||PHNumber>9999999999)
 						{
 							try
 							{
